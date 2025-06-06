@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monika G - Portfolio</title>
+    <style>
+        /* General Styling */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: black;
+            color: white;
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        /* 3D Background Canvas */
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.9);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            box-shadow: 0 4px 10px cyan;
+        }
+
+        nav h1 {
+            color: cyan;
+            margin-left: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin-right: 20px;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: magenta;
+            transform: scale(1.1);
+        }
+
+        /* Sections */
+        section {
+            padding: 120px 50px;
+            margin-top: 50px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            margin: 50px auto;
+            max-width: 80%;
+            box-shadow: 0px 0px 20px cyan;
+        }
+
+        h2 {
+            color: cyan;
+            font-size: 32px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        a {
+            color: magenta;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        a:hover {
+            color: cyan;
+            transform: scale(1.1);
+        }
+
+        /* Particle Background */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Graphics */
+        .image-container img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px magenta;
+            margin-top: 20px;
+        }
+
+        /* Project Section */
+        .project {
+            border: 2px solid cyan;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            max-width: 70%;
+            background: rgba(0, 0, 0, 0.8);
+            transition: transform 0.3s;
+        }
+
+        .project:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 30px magenta;
+        }
+
+        .project h3 {
+            color: cyan;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 3D Background -->
+    <canvas id="bg"></canvas>
+
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Navbar -->
+    <nav>
+        <h1>Monika</h1>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I'm <span style="color: magenta;">Monika Gopi</span>, a passionate software developer with expertise in C++, web development, and AI projects.</p>
+        <a href="https://github.com/monikagopi03" target="_blank">View GitHub</a>
+        <div class="image-container"></div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Student Management System</h3>
+            <p>A fully functional system to manage students' data, attendance, and performance tracking.</p>
+            <a href="Student Monitering.zip" download>Download Project</a>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <h2>Certifications</h2>
+        <ul>
+            <li><a href="Azure Certificate.pdf" target="_blank">Azure Certification</a></li>
+            <li><a href="AWS Cloud Technical Essential.jpg" target="_blank">C++ Certification</a></li>
+            <li><a href="NPTEL - Cloud Computing.jpg" target="_blank">Hindu Groups Certification</a></li>
+            <li><a href="Internship.pdf" target="_blank">Internship Certificate</a></li>
+            <li><a href="Communication Skills - TCS IONS.jpg" target="_blank">Communication Skills</a></li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:monikagopi2004@gmail.com">monikagopi2004@gmail.com</a></p>
+        <p>Phone: +91 9600221163</p>
+    </section>
+
+    <!-- Scripts for 3D and Particles -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Particle Background
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 100 },
+                "color": { "value": "#ff00ff" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.7 },
+                "size": { "value": 3 }
+            }
+        });
+
+        // 3D Background Animation
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("bg"), alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
+        const material = new THREE.MeshStandardMaterial({ color: 0xff00ff, wireframe: true });
+        const torus = new THREE.Mesh(geometry, material);
+        scene.add(torus);
+
+        const pointLight = new THREE.PointLight(0xffffff);
+        pointLight.position.set(5, 5, 5);
+        scene.add(pointLight);
+
+        camera.position.z = 30;
+
+        function animate() {
+            requestAnimationFrame(animate);
+            torus.rotation.x += 0.01;
+            torus.rotation.y += 0.01;
+            renderer.render(scene, camera);
+        }
+
+        animate();
+
+        // Responsive Canvas
+        window.addEventListener("resize", () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+
+</body>
+</html>
